@@ -48,11 +48,13 @@ program
     let commandName = path.basename(command)
     let extractedFile = extract(commandName)
     // todo: add support for node_modules/.bin
-    let obj = spawnSync(command, args, { 'stdio': 'pipe' })
+    let obj = spawnSync(command, args, { 'stdio': 'inherit' })
     if (obj.error) {
       console.log(obj.error)
     }
-    fs.unlinkSync(extractedFile)
+    if (extractedFile) {
+      fs.unlinkSync(extractedFile)
+    }
   })
 
 program.command('set <file>')
