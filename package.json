@@ -10,5 +10,9 @@
     },
     "bin": {
         "mlt": "dist/main.js"
+    },
+    "scripts": {
+        "develop": "tsc -w --outDir dist main.ts",
+        "build": "tsc --outDir dist main.ts"
     }
 }
