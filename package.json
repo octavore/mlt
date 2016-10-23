@@ -6,13 +6,34 @@
     },
     "devDependencies": {
         "@types/commander": "^2.3.30",
+        "tslint": "^3.15.1",
         "typescript": "^2.0.3"
     },
     "bin": {
         "mlt": "dist/main.js"
     },
     "scripts": {
-        "develop": "tsc -w --outDir dist main.ts",
-        "build": "tsc --outDir dist main.ts"
+        "develop": "mlt tsc -w --outDir dist main.ts",
+        "build": "mlt tsc --outDir dist main.ts",
+        "lint": "mlt tslint main.ts"
+    },
+    "configFiles": {
+        "tsconfig.json": {
+            "compilerOptions": {
+                "strictNullChecks": true
+            }
+        },
+        "tslint.json": {
+            "rules": {
+                "semicolon": [
+                    true,
+                    "never"
+                ]
+            }
+        },
+        "_mapping": {
+            "tsc": "tsconfig.json",
+            "tslint": "tslint.json"
+        }
     }
 }

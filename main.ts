@@ -5,7 +5,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { spawnSync } from 'child_process'
 
-let extract = (command: string) => {
+let extract = (command: string): string => {
   let packageJsonData = fs.readFileSync('package.json', { encoding: 'utf8' })
   let packageJson = JSON.parse(packageJsonData)
   if (!packageJson['configFiles']) {
@@ -58,7 +58,7 @@ program
 program.command('set <file>')
   .option('--indent <num_spaces>', 'number of lines to indent JSON', '4')
   .action((file: string, options: any) => {
-    if (file == 'package.json') {
+    if (file === 'package.json') {
       return
     }
     embed(file, options.indent)
@@ -68,7 +68,7 @@ program.command('set <file>')
 program.command('register <command> <file>')
   .option('--indent <num_spaces>', 'number of lines to indent JSON', 4)
   .action((command: string, file: string, options: any) => {
-    if (file == 'package.json') {
+    if (file === 'package.json') {
       return
     }
     let packageJsonData = fs.readFileSync('package.json', { encoding: 'utf8' })

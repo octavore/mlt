@@ -53,7 +53,7 @@ program
 program.command('set <file>')
     .option('--indent <num_spaces>', 'number of lines to indent JSON', '4')
     .action(function (file, options) {
-    if (file == 'package.json') {
+    if (file === 'package.json') {
         return;
     }
     embed(file, options.indent);
@@ -62,7 +62,7 @@ program.command('set <file>')
 program.command('register <command> <file>')
     .option('--indent <num_spaces>', 'number of lines to indent JSON', 4)
     .action(function (command, file, options) {
-    if (file == 'package.json') {
+    if (file === 'package.json') {
         return;
     }
     var packageJsonData = fs.readFileSync('package.json', { encoding: 'utf8' });
