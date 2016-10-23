@@ -1,6 +1,8 @@
 {
     "name": "mlt",
     "version": "0.1.0",
+    "repository": "https://github.com/octavore/mlt",
+    "license": "MIT",
     "dependencies": {
         "commander": "^2.9.0"
     },
