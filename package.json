@@ -1,0 +1,14 @@
+{
+    "name": "mlt",
+    "version": "0.1.0",
+    "dependencies": {
+        "commander": "^2.9.0"
+    },
+    "devDependencies": {
+        "@types/commander": "^2.3.30",
+        "typescript": "^2.0.3"
+    },
+    "bin": {
+        "mlt": "dist/main.js"
+    }
+}
